@@ -1,0 +1,22 @@
+<div class="fixed inset-0 z-[100] bg-[#000000] flex flex-col items-center justify-center overflow-hidden">
+  
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#A78BFA]/10 blur-[120px] rounded-full"></div>
+
+  <div class="mb-8 flex items-center z-10">
+    <span class="font-mono text-xl md:text-3xl text-[#A78BFA] tracking-tighter drop-shadow-[0_0_10px_rgba(167,139,250,0.5)]">
+      {{ text() }}
+    </span>
+    <span class="w-3 h-7 bg-[#E879F9] ml-2 animate-pulse shadow-[0_0_15px_#E879F9]"></span>
+  </div>
+
+  <div class="w-64 h-[3px] bg-white/5 rounded-full overflow-hidden relative">
+    <div class="absolute inset-y-0 left-0 bg-gradient-to-r from-[#A78BFA] via-[#F472B6] to-[#E879F9] shadow-[0_0_20px_rgba(232,121,249,0.4)] transition-all duration-300"
+         [style.width.%]="progress()">
+    </div>
+  </div>
+
+  <span class="mt-6 font-mono text-[10px] text-gray-500 tracking-[0.4em] uppercase opacity-50">
+    Loading Experience {{ progress() }}%
+  </span>
+
+</div>

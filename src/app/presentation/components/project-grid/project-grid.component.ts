@@ -5,6 +5,7 @@ import { ProjectMockRepository } from '../../../data/repositories/project-mock.r
 import { Project } from '../../../domain/models/project.model';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { RouterLink } from '@angular/router';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-project-grid',
@@ -18,11 +19,27 @@ import { RouterLink } from '@angular/router';
   ],
   templateUrl: './project-grid.component.html'
 })
+
 export class ProjectGridComponent implements OnInit {
   private projectRepo = inject(ProjectRepository);
   projects: Project[] = [];
 
   ngOnInit() {
-    this.projectRepo.getAllProjects().subscribe(data => this.projects = data);
+  this.projectRepo.getAllProjects().pipe(
+    delay(2000)
+  ).subscribe(data => {
+    this.projects = data.slice(0, 5);
+  });
+}
+
+  getCardSpan(index: number): string {
+    const layouts = [
+      'md:col-span-2 md:row-span-2', 
+      'col-span-1 row-span-1',       
+      'col-span-1 row-span-1',      
+      'md:col-span-1 md:row-span-1', 
+      'md:col-span-2 md:row-span-1', 
+    ];
+    return layouts[index] || 'col-span-1';
   }
 }

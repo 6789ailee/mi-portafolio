@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
+import { Project } from '../../domain/models/project.model';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
@@ -23,5 +24,22 @@ export class ThemeService {
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }
+}
+
+export class ProjectService {
+  // Estado inicial
+  private projectsSignal = signal<Project[]>([]);
+  filter = signal<string>('All');
+
+  // Selector computado (Reactividad pura)
+  filteredProjects = computed(() => {
+    const activeFilter = this.filter();
+    if (activeFilter === 'All') return this.projectsSignal();
+    return this.projectsSignal().filter(p => p.tags.includes(activeFilter));
+  });
+
+  setProjects(data: Project[]) {
+    this.projectsSignal.set(data);
   }
 }

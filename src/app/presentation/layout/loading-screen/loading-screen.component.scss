@@ -1,0 +1,15 @@
+:host {
+  &.loading-exit {
+    animation: splitOpen 1.2s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  }
+}
+
+@keyframes splitOpen {
+  0% { 
+    clip-path: inset(0 0 0 0); 
+  }
+  100% { 
+    clip-path: inset(100% 0 0 0); // Se abre hacia arriba
+    opacity: 0;
+  }
+}

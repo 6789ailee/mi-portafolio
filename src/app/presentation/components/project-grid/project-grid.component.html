@@ -1,38 +1,88 @@
-<section appScrollReveal class="py-20">
-  <h2 class="text-3xl font-bold mb-10 text-center md:text-left">Proyectos Destacados</h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<section appScrollReveal class="py-24">
+  <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-4">
+    <div>
+      <h2 class="text-4xl font-bold text-bento-dark-text-primary tracking-tight">
+        Proyectos <span class="text-bento-dark-accent-lila">Destacados</span>
+      </h2>
+      <p class="text-bento-dark-text-secondary mt-2 max-w-md">
+        Soluciones de ingeniería con arquitectura limpia y enfoque en escalabilidad.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
     @for (project of projects; track project.id; let i = $index) {
-      <div [class]="i === 0 ? 'md:col-span-2 md:row-span-2' : 'col-span-1'"
-            class="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-500">
-        
+      <div 
+        [class]="getCardSpan(i)"
+        class="group relative overflow-hidden rounded-[2.5rem] bg-bento-dark-card/40 border border-bento-dark-border backdrop-blur-bento-glass hover:shadow-2xl hover:shadow-bento-dark-accent-lila/10 transition-all duration-500"
+      >
+        <div class="absolute inset-0 bg-gradient-to-br from-bento-dark-accent-lila/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
         <img [src]="project.image" 
-              class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700">
+             class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0">
         
-        <div class="relative p-8 h-full flex flex-col justify-end">
-          <div class="flex gap-2 mb-3">
+        <div class="relative p-8 h-full flex flex-col justify-end z-10">
+          <div class="flex flex-wrap gap-2 mb-4">
             @for (tag of project.tags; track tag) {
-              <span class="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+              <span class="px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-full border border-bento-dark-accent-emerald/30 bg-bento-dark-accent-emerald/10 text-bento-dark-accent-emerald">
                 {{ tag }}
               </span>
             }
           </div>
           
-          <h3 [class]="i === 0 ? 'text-3xl' : 'text-xl'" class="font-bold mb-2">
+          <h3 [class]="i === 0 ? 'text-4xl' : 'text-2xl'" class="font-bold mb-3 text-bento-dark-text-primary group-hover:text-bento-dark-accent-lila transition-colors">
             {{ project.title }}
           </h3>
-          <p class="text-slate-600 dark:text-slate-400 line-clamp-2">
+          
+          <p class="text-bento-dark-text-secondary line-clamp-2 text-sm leading-relaxed mb-6">
             {{ project.description }}
           </p>
-          <button [routerLink]="['/proyecto', project.id]" 
-                  class="mt-4 px-6 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-medium">
-            Ver Detalles
-          </button>
-          <button class="mt-4 w-fit px-6 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-medium opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
-            Ver Proyecto
-          </button>
+
+          <div class="flex items-center gap-4">
+            <button [routerLink]="['/proyecto', project.id]" 
+                    class="px-6 py-2.5 bg-bento-dark-text-primary text-black rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all">
+              Explorar Caso
+            </button>
+            
+            <a href="#" class="text-bento-dark-text-primary/50 hover:text-bento-dark-accent-lila transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
+    }
+  </div>
+</section>
+
+<section appScrollReveal class="py-24">
+  <div class="mb-12">
+    <h2 class="text-4xl font-bold text-bento-dark-text-primary tracking-tight">
+      Proyectos <span class="text-bento-dark-accent-lila">Destacados</span>
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+    @if (projects.length > 0) {
+      @for (project of projects; track project.id; let i = $index) {
+        <div [class]="getCardSpan(i)" class="group relative overflow-hidden rounded-[2.5rem] bg-bento-dark-card/40 border border-bento-dark-border backdrop-blur-bento-glass transition-all duration-500">
+           </div>
+      }
+    } @else {
+      @for (item of [1,2,3,4,5]; track $index) {
+        <div [class]="getCardSpan($index)" 
+             class="relative overflow-hidden rounded-[2.5rem] bg-bento-dark-card/20 border border-bento-dark-border/50 backdrop-blur-sm">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
+          
+          <div class="p-8 h-full flex flex-col justify-end space-y-4">
+            <div class="w-24 h-4 bg-white/10 rounded-full"></div>
+            <div class="w-3/4 h-8 bg-white/10 rounded-xl"></div>
+            <div class="w-1/2 h-4 bg-white/5 rounded-full"></div>
+            <div class="w-32 h-10 bg-white/10 rounded-full mt-4"></div>
+          </div>
+        </div>
+      }
     }
   </div>
 </section>

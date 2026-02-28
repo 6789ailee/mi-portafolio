@@ -1,48 +1,47 @@
-<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-20">
+<section class="relative min-h-screen bg-[#000000] overflow-hidden flex items-center pt-20">
   
-  <div class="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-[120px] dark:bg-blue-600/10"></div>
-  <div class="absolute bottom-1/4 -right-20 w-72 h-72 bg-cyan-400/20 rounded-full blur-[120px] dark:bg-cyan-600/10"></div>
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full animate-pulse"></div>
+  <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-fuchsia-600/10 blur-[130px] rounded-full animate-pulse" style="animation-delay: 2s"></div>
+
+  <div class="absolute inset-0 z-0 opacity-[0.15]" 
+       style="background-image: url('data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 100 Q 250 50 500 100 T 1000 100\' stroke=\'%234f46e5\' fill=\'transparent\' stroke-width=\'0.5\'/%3E%3Cpath d=\'M0 150 Q 250 100 500 150 T 1000 150\' stroke=\'%237e22ce\' fill=\'transparent\' stroke-width=\'0.5\'/%3E%3C/svg%3E'); background-size: 100% 100px;">
+  </div>
 
   <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
     
-    <div class="text-center lg:text-left space-y-8">
-      <div class="inline-block px-4 py-1 rounded-full border border-blue-200 bg-blue-50/50 dark:bg-blue-900/20 dark:border-blue-800 text-blue-600 dark:text-blue-400 font-medium text-sm animate-fade-in">
-        👋 Disponible para nuevos proyectos
+    <div class="space-y-8 animate-fade-in-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-fuchsia-500/30 bg-fuchsia-500/5 text-fuchsia-400 text-xs font-mono">
+        <span class="w-2 h-2 rounded-full bg-fuchsia-500 animate-ping"></span>
+        OPEN TO WORK
       </div>
-      
-      <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight">
-        Diseño y Construyo <br>
-        <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-          Experiencias Digitales
+
+      <h1 class="text-6xl lg:text-[100px] font-black leading-[0.9] tracking-tighter text-white">
+        CREANDO EL <br>
+        <span class="bg-gradient-to-r from-[#A78BFA] via-[#F472B6] to-[#E879F9] bg-clip-text text-transparent">
+          FUTURO.
         </span>
       </h1>
-      
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-        Ingeniero Full Stack especializado en crear aplicaciones robustas con 
-        <span class="text-slate-900 dark:text-white font-semibold">Angular</span> y 
-        <span class="text-slate-900 dark:text-white font-semibold">Clean Architecture</span>. 
-        Transformo ideas complejas en productos simples y escalables.
+
+      <p class="text-gray-400 text-xl max-w-lg leading-relaxed font-light">
+        Ingeniero Full Stack especializado en <span class="text-white font-medium">Arquitecturas Escalables</span> y experiencias digitales de alto rendimiento.
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <button class="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-bold hover:scale-105 transition-transform shadow-xl shadow-blue-500/20">
-          Ver mis proyectos
+      <div class="flex flex-wrap gap-5 pt-4">
+        <button class="px-10 py-4 bg-white text-black rounded-2xl font-black hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+          VER PROYECTOS
         </button>
-        <button class="px-8 py-4 border border-slate-200 dark:border-slate-700 rounded-2xl font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-          Descargar CV
+        <button class="px-10 py-4 border border-white/10 backdrop-blur-xl rounded-2xl font-bold hover:bg-white/5 transition-all text-white">
+          DESCARGAR CV
         </button>
       </div>
     </div>
 
-    <div class="relative flex justify-center lg:justify-end animate-float">
-      <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-        <div class="absolute inset-0 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-[2rem] rotate-6 opacity-20 dark:opacity-40"></div>
-        <div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 rounded-[2rem] overflow-hidden border-2 border-white dark:border-slate-700 shadow-2xl">
-           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
-                alt="Tu Nombre" 
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-        </div>
-      </div>
+    <div class="relative group">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-[#A78BFA]/20 to-transparent blur-[120px] rounded-full group-hover:scale-110 transition-transform duration-1000"></div>
+      
+      <img src="assets/tu-foto-sin-fondo.png" 
+           alt="Profile Image" 
+           class="relative z-10 w-full max-w-2xl mx-auto grayscale group-hover:grayscale-0 transition-all duration-700 drop-shadow-[0_0_50px_rgba(167,139,250,0.2)]">
     </div>
 
   </div>
