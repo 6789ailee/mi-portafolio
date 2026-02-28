@@ -1,1 +1,65 @@
-<p>project-detail works!</p>
+<div class="animate-fade-in pb-20" *ngIf="project() as p">
+  
+  <header class="relative h-[50vh] w-full overflow-hidden">
+    <img [src]="p.image" class="w-full h-full object-cover opacity-30 blur-sm scale-110">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-900 to-transparent"></div>
+    
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <div class="flex gap-2 mb-4">
+        @for (tag of p.tags; track tag) {
+          <span class="px-4 py-1 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/20 font-bold text-xs uppercase">
+            {{ tag }}
+          </span>
+        }
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black mb-4">{{ p.title }}</h1>
+      <p class="text-xl text-slate-500 max-w-2xl">{{ p.description }}</p>
+    </div>
+  </header>
+
+  <div class="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100 dark:border-slate-700">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="md:col-span-2 space-y-8">
+          <section>
+            <h2 class="text-2xl font-bold mb-4">Sobre el Proyecto</h2>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Aquí puedes detallar los desafíos que resolviste. Por ejemplo: 
+              "Implementé una arquitectura basada en **Clean Architecture** para asegurar que el core del negocio
+              fuese independiente de librerías externas, facilitando los tests unitarios y el mantenimiento."
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold mb-4">Stack Destacado</h2>
+            <ul class="grid grid-cols-2 gap-4">
+              <li class="flex items-center gap-2 text-slate-500 font-medium italic">
+                <span class="text-blue-500">✔</span> Angular Signals
+              </li>
+              <li class="flex items-center gap-2 text-slate-500 font-medium italic">
+                <span class="text-blue-500">✔</span> Tailwind CSS
+              </li>
+              <li class="flex items-center gap-2 text-slate-500 font-medium italic">
+                <span class="text-blue-500">✔</span> Reactive Programming (RxJS)
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <a [href]="p.githubUrl" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-bold hover:scale-105 transition-transform">
+            <span>Repositorio Git</span>
+          </a>
+          <a [href]="p.demoUrl" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+            <span>Ver Demo Live</span>
+          </a>
+          <button routerLink="/" class="text-slate-400 hover:text-blue-500 text-sm font-medium mt-4">
+            ← Volver al inicio
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
