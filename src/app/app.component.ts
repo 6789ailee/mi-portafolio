@@ -4,6 +4,7 @@ import { NavbarComponent } from './presentation/layout/navbar/navbar.component';
 import { ProjectGridComponent } from './presentation/components/project-grid/project-grid.component';
 import { HeroComponent } from './presentation/components/hero/hero.component';
 import { SkillsComponent } from './presentation/components/skills/skills.component';
+import { FooterComponent } from './presentation/layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { SkillsComponent } from './presentation/components/skills/skills.compone
     NavbarComponent,
     ProjectGridComponent,
     HeroComponent,
-    SkillsComponent
+    SkillsComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
