@@ -1,0 +1,35 @@
+<section class="py-20">
+  <h2 class="text-3xl font-bold mb-10 text-center md:text-left">Proyectos Destacados</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    @for (project of projects; track project.id; let i = $index) {
+      <div [class]="i === 0 ? 'md:col-span-2 md:row-span-2' : 'col-span-1'"
+           class="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-500">
+        
+        <img [src]="project.image" 
+             class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700">
+        
+        <div class="relative p-8 h-full flex flex-col justify-end">
+          <div class="flex gap-2 mb-3">
+            @for (tag of project.tags; track tag) {
+              <span class="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                {{ tag }}
+              </span>
+            }
+          </div>
+          
+          <h3 [class]="i === 0 ? 'text-3xl' : 'text-xl'" class="font-bold mb-2">
+            {{ project.title }}
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 line-clamp-2">
+            {{ project.description }}
+          </p>
+          
+          <button class="mt-4 w-fit px-6 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-medium opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
+            Ver Proyecto
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</section>
