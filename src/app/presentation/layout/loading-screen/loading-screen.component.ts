@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './loading-screen.component.html',
-  styleUrls: ['./loading-screen.component.scss'] // Asegúrate que apunte a scss
+  styleUrls: ['./loading-screen.component.scss'] 
 })
 export class LoadingScreenComponent implements OnInit {
   @Output() loadingFinished = new EventEmitter<void>();
@@ -35,7 +35,7 @@ export class LoadingScreenComponent implements OnInit {
       this.progress.update(v => v + 1);
       if (this.progress() === 100) {
         clearInterval(interval);
-        // Esperamos un poco para que el usuario vea el 100%
+      
         setTimeout(() => this.loadingFinished.emit(), 800);
       }
     }, 30);
@@ -43,6 +43,6 @@ export class LoadingScreenComponent implements OnInit {
 
   private preloadAssets() {
     const img = new Image();
-    img.src = 'assets/images/person.png'; 
+    img.src = 'images/image-person.png';
   }
 }
