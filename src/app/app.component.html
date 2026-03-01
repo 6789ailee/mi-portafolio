@@ -4,24 +4,11 @@
 
 <div [class.opacity-0]="isLoading()" 
      [class.opacity-100]="!isLoading()" 
-     class="transition-opacity duration-1000 ease-in-out bg-[#000000]">
+     class="transition-opacity duration-1000 ease-in-out bg-[#000000] min-h-screen flex flex-col">
   
   <app-navbar></app-navbar>
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6 grid grid-cols-3 gap-8">
-  <div class="text-center">
-    <span class="block text-4xl font-bold text-white">5+</span>
-    <span class="text-gray-500 text-xs uppercase tracking-widest">Años de Exp.</span>
-  </div>
-  <div class="text-center border-x border-white/10">
-    <span class="block text-4xl font-bold text-white">20+</span>
-    <span class="text-gray-500 text-xs uppercase tracking-widest">Proyectos</span>
-  </div>
-  <div class="text-center">
-    <span class="block text-4xl font-bold text-white">100%</span>
-    <span class="text-gray-500 text-xs uppercase tracking-widest">Compromiso</span>
-  </div>
-</div>
-  <main>
+
+  <main class="flex-grow">
     <router-outlet></router-outlet>
   </main>
 

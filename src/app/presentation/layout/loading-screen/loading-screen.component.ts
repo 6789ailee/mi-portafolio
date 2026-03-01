@@ -42,8 +42,7 @@ export class LoadingScreenComponent implements OnInit {
   }
 
   private preloadAssets() {
-    // Esto descarga tu foto en segundo plano mientras carga la barra
     const img = new Image();
-    img.src = 'assets/tu-foto-sin-fondo.png'; 
+    img.src = 'assets/images/person.png'; 
   }
 }

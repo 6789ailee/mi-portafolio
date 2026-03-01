@@ -1,17 +1,19 @@
 import { Component, inject } from '@angular/core';
-import { ThemeService } from '../../../core/services/theme.service';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss' // Asegúrate de tener este archivo para efectos extra
 })
 export class NavbarComponent {
-  themeService = inject(ThemeService);
+  // Inyección moderna de Angular
+  public themeService = inject(ThemeService);
   
-  toggleTheme() {
+  toggleTheme(): void {
     this.themeService.toggleTheme();
   }
 }

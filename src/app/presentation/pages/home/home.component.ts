@@ -9,11 +9,9 @@ import { FooterComponent } from '../../layout/footer/footer.component';
   selector: 'app-home',
   standalone: true,
   imports: [
-    NavbarComponent,
     ProjectGridComponent,
     HeroComponent,
-    SkillsComponent,
-    FooterComponent
+    SkillsComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

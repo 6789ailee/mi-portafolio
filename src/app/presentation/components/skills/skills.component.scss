@@ -1,0 +1,25 @@
+.group {
+  &:hover {
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.05);
+    
+    img {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+}
+:host {
+  display: block; // Recomendado para componentes de bloque
+}
+
+.group {
+  transition: all 0.5s ease;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.05);
+    
+    img {
+      // Esto complementa tus clases de Tailwind
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+}

@@ -1,11 +1,13 @@
-.animate-fade-in-up {
-  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+.animate-reveal {
+  opacity: 0;
+  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.3s;
 }
 
-@keyframes fadeInUp {
+@keyframes revealUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;

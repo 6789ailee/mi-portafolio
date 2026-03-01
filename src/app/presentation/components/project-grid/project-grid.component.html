@@ -1,88 +1,47 @@
-<section appScrollReveal class="py-24">
-  <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-4">
-    <div>
-      <h2 class="text-4xl font-bold text-bento-dark-text-primary tracking-tight">
-        Proyectos <span class="text-bento-dark-accent-lila">Destacados</span>
-      </h2>
-      <p class="text-bento-dark-text-secondary mt-2 max-w-md">
-        Soluciones de ingeniería con arquitectura limpia y enfoque en escalabilidad.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
-    @for (project of projects; track project.id; let i = $index) {
-      <div 
-        [class]="getCardSpan(i)"
-        class="group relative overflow-hidden rounded-[2.5rem] bg-bento-dark-card/40 border border-bento-dark-border backdrop-blur-bento-glass hover:shadow-2xl hover:shadow-bento-dark-accent-lila/10 transition-all duration-500"
-      >
-        <div class="absolute inset-0 bg-gradient-to-br from-bento-dark-accent-lila/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-        <img [src]="project.image" 
-             class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0">
-        
-        <div class="relative p-8 h-full flex flex-col justify-end z-10">
-          <div class="flex flex-wrap gap-2 mb-4">
-            @for (tag of project.tags; track tag) {
-              <span class="px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-full border border-bento-dark-accent-emerald/30 bg-bento-dark-accent-emerald/10 text-bento-dark-accent-emerald">
-                {{ tag }}
-              </span>
-            }
-          </div>
-          
-          <h3 [class]="i === 0 ? 'text-4xl' : 'text-2xl'" class="font-bold mb-3 text-bento-dark-text-primary group-hover:text-bento-dark-accent-lila transition-colors">
-            {{ project.title }}
-          </h3>
-          
-          <p class="text-bento-dark-text-secondary line-clamp-2 text-sm leading-relaxed mb-6">
-            {{ project.description }}
-          </p>
-
-          <div class="flex items-center gap-4">
-            <button [routerLink]="['/proyecto', project.id]" 
-                    class="px-6 py-2.5 bg-bento-dark-text-primary text-black rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all">
-              Explorar Caso
-            </button>
-            
-            <a href="#" class="text-bento-dark-text-primary/50 hover:text-bento-dark-accent-lila transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
-        </div>
+<section class="py-24 bg-[#000000]">
+  <div class="container mx-auto px-6">
+    
+    <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <p class="text-[#A78BFA] font-mono text-xs tracking-[0.3em] mb-2">// PORTFOLIO</p>
+        <h2 class="text-5xl font-black text-white">Proyectos <span class="text-gray-600">Destacados</span></h2>
       </div>
-    }
-  </div>
-</section>
+      <button class="text-white border-b border-[#E879F9] pb-1 hover:text-[#E879F9] transition-colors font-mono text-sm">
+        Ver todos los repositorios _
+      </button>
+    </div>
 
-<section appScrollReveal class="py-24">
-  <div class="mb-12">
-    <h2 class="text-4xl font-bold text-bento-dark-text-primary tracking-tight">
-      Proyectos <span class="text-bento-dark-accent-lila">Destacados</span>
-    </h2>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
-    @if (projects.length > 0) {
-      @for (project of projects; track project.id; let i = $index) {
-        <div [class]="getCardSpan(i)" class="group relative overflow-hidden rounded-[2.5rem] bg-bento-dark-card/40 border border-bento-dark-border backdrop-blur-bento-glass transition-all duration-500">
-           </div>
-      }
-    } @else {
-      @for (item of [1,2,3,4,5]; track $index) {
-        <div [class]="getCardSpan($index)" 
-             class="relative overflow-hidden rounded-[2.5rem] bg-bento-dark-card/20 border border-bento-dark-border/50 backdrop-blur-sm">
-          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
+      
+      @for (p of projects; track p.title) {
+        <div [class.md:col-span-2]="p.size === 'large' || p.size === 'medium'"
+             [class.md:row-span-2]="p.size === 'large'"
+             class="group relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-700 hover:border-[#A78BFA]/30">
           
-          <div class="p-8 h-full flex flex-col justify-end space-y-4">
-            <div class="w-24 h-4 bg-white/10 rounded-full"></div>
-            <div class="w-3/4 h-8 bg-white/10 rounded-xl"></div>
-            <div class="w-1/2 h-4 bg-white/5 rounded-full"></div>
-            <div class="w-32 h-10 bg-white/10 rounded-full mt-4"></div>
+          <img [src]="p.image" 
+               class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000">
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-black/20 to-transparent"></div>
+
+          <div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <span class="text-[#F472B6] text-xs font-mono mb-2">{{ p.category }}</span>
+            <h3 class="text-2xl font-bold text-white mb-4">{{ p.title }}</h3>
+            
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+              @for (tag of p.tags; track tag) {
+                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] text-gray-300 backdrop-blur-md">
+                  {{ tag }}
+                </span>
+              }
+            </div>
+          </div>
+
+          <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </div>
         </div>
       }
-    }
+
+    </div>
   </div>
 </section>
