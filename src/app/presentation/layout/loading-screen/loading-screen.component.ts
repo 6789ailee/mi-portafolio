@@ -13,7 +13,7 @@ export class LoadingScreenComponent implements OnInit {
   
   progress = signal(0);
   text = signal('');
-  private fullText = '> System.init("Bienvenido");';
+  private fullText = '> Welcome to my Portafolio';
 
   ngOnInit() {
     this.typeText();
@@ -43,6 +43,6 @@ export class LoadingScreenComponent implements OnInit {
 
   private preloadAssets() {
     const img = new Image();
-    img.src = 'images/image-person.png';
+    img.src = 'images/foto.png';
   }
 }

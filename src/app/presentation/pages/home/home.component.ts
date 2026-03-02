@@ -4,6 +4,7 @@ import { ProjectGridComponent } from '../../components/project-grid/project-grid
 import { HeroComponent } from '../../components/hero/hero.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
 import { FooterComponent } from '../../layout/footer/footer.component';
+import { AboutComponent } from '../../components/about/about.component.spec';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { FooterComponent } from '../../layout/footer/footer.component';
   imports: [
     ProjectGridComponent,
     HeroComponent,
-    SkillsComponent
+    SkillsComponent,
+    AboutComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
