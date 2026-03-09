@@ -13,36 +13,34 @@ export class LoadingScreenComponent implements OnInit {
   
   progress = signal(0);
   text = signal('');
-  private fullText = '> Welcome to my Portafolio';
+  private fullText = "> Hi, I'm Aile. Welcome to my portfolio. /<"; 
 
   ngOnInit() {
     this.typeText();
     this.startProgress();
-    this.preloadAssets();
   }
 
   private typeText() {
     let i = 0;
     const interval = setInterval(() => {
-      this.text.update(v => v + this.fullText[i]);
-      i++;
-      if (i === this.fullText.length) clearInterval(interval);
-    }, 50);
+      if (i < this.fullText.length) {
+        this.text.update(v => v + this.fullText[i]);
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 35); 
   }
 
   private startProgress() {
     const interval = setInterval(() => {
-      this.progress.update(v => v + 1);
+      const increment = Math.floor(Math.random() * 4) + 1;
+      this.progress.update(v => Math.min(v + increment, 100));
+
       if (this.progress() === 100) {
         clearInterval(interval);
-      
-        setTimeout(() => this.loadingFinished.emit(), 800);
+        setTimeout(() => this.loadingFinished.emit(), 1200);
       }
-    }, 30);
-  }
-
-  private preloadAssets() {
-    const img = new Image();
-    img.src = 'images/foto.png';
+    }, 60);
   }
 }

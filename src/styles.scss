@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-color: #000000;
+  --text-primary: #ffffff;
+  /* COLORES CHILLONES */
+  --text-accent: #ff007f;    // Rosa chillón
+  --text-secondary: #a855f7; // Lila chillón
+  --text-blue: #00d4ff;      // Azul chillón
+}
+
+/* Clase de utilidad para el efecto Vidrio Profundo */
+.glass-panel {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-glass-rosa;
+}
+
+/* Clase para el texto con degradado chillón */
+.text-gradient-chill {
+  @apply bg-gradient-to-r from-rosa-chillon via-lila-chillon to-azul-chillon bg-clip-text text-transparent;
+}
+
+html, body {
+  cursor: none; // Oculta el cursor por defecto
+}
+
+// Aseguramos que los botones también hereden el cursor oculto
+a, button, input, textarea {
+  cursor: none !important;
+}

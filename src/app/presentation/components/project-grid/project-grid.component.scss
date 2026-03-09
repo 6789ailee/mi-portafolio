@@ -1,13 +1,26 @@
-.group {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  
-  img {
-    filter: brightness(0.7) grayscale(100%);
-  }
+:host {
+  display: block;
+}
 
-  &:hover {
-    img {
-      filter: brightness(1) grayscale(0%);
-    }
+@media (min-width: 1280px) {
+  .grid {
+    auto-rows: 200px; 
+    max-width: 1100px;
+    margin: 0 auto;
   }
+}
+
+section {
+  scroll-margin-top: 100px; 
+}
+
+.clickable {
+  @media (min-width: 1024px) {
+    cursor: none; 
+  }
+}
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
 }

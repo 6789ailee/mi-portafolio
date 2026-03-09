@@ -1,47 +1,60 @@
-<section class="py-24 bg-[#000000]">
-  <div class="container mx-auto px-6">
+<section class="py-12 md:py-16 bg-black min-h-[80vh] flex items-center" id="projects">
+  <div class="container mx-auto px-6 max-w-6xl">
     
-    <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div class="mb-10 animate-reveal-up flex justify-between items-end">
       <div>
-        <p class="text-[#A78BFA] font-mono text-xs tracking-[0.3em] mb-2">// PORTFOLIO</p>
-        <h2 class="text-5xl font-black text-white">Proyectos <span class="text-gray-600">Destacados</span></h2>
+        <p class="text-azul-chillon font-mono text-[9px] tracking-[0.4em] mb-2 uppercase opacity-70">// REPOSITORIO_DE_SISTEMAS</p>
+        <h2 class="text-4xl md:text-5xl font-black text-white italic uppercase tracking-tighter">
+          SELECTED 
+          <span class="bg-gradient-to-r from-lila-chillon via-rosa-chillon to-azul-chillon bg-clip-text text-transparent italic">
+            WORKS_
+          </span>
+        </h2>
       </div>
-      <button class="text-white border-b border-[#E879F9] pb-1 hover:text-[#E879F9] transition-colors font-mono text-sm">
-        Ver todos los repositorios _
+      <button class="clickable text-white/40 border-b border-white/10 pb-1 hover:text-rosa-chillon hover:border-rosa-chillon transition-all font-mono text-[10px] tracking-widest uppercase">
+        VER_REPOS.SYS
       </button>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[200px]">
       
       @for (p of projects; track p.title) {
         <div [class.md:col-span-2]="p.size === 'large' || p.size === 'medium'"
              [class.md:row-span-2]="p.size === 'large'"
-             class="group relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-700 hover:border-[#A78BFA]/30">
+             class="clickable group relative rounded-[2rem] overflow-hidden border border-white/5 bg-zinc-900/50 transition-all duration-700 hover:border-lila-chillon/40">
           
-          <img [src]="p.image" 
-               class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000">
-          
-          <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 z-0">
+            <img [src]="p.image" 
+                 class="w-full h-full object-cover opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          </div>
 
-          <div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            <span class="text-[#F472B6] text-xs font-mono mb-2">{{ p.category }}</span>
-            <h3 class="text-2xl font-bold text-white mb-4">{{ p.title }}</h3>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+            <div class="translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="text-azul-chillon text-[8px] font-black font-mono mb-1 uppercase tracking-widest inline-block">
+                {{ p.category }}
+              </span>
+              <h3 class="text-xl font-black text-white uppercase italic tracking-tighter leading-tight group-hover:bg-gradient-to-r group-hover:from-azul-chillon group-hover:to-lila-chillon group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                {{ p.title }}
+              </h3>
+            </div>
             
-            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+            <div class="flex flex-wrap gap-1.5 mt-3 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 transform translate-y-2 group-hover:translate-y-0">
               @for (tag of p.tags; track tag) {
-                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] text-gray-300 backdrop-blur-md">
+                <span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[7px] font-bold text-white/50 uppercase">
                   {{ tag }}
                 </span>
               }
             </div>
           </div>
 
-          <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <div class="absolute top-4 right-4 w-9 h-9 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
           </div>
         </div>
       }
-
     </div>
   </div>
 </section>

@@ -1,22 +1,25 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ThemeService } from '../../../core/services/theme.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss' 
 })
 export class NavbarComponent {
-  public themeService = inject(ThemeService);
-  
-  toggleTheme(): void {
-    this.themeService.toggleTheme();
+  isMenuOpen = signal(false);
+
+  navLinks = [
+    { name: 'Inicio', path: '/home' },
+    { name: 'Sobre mi', path: '/sobre-mi' },
+    { name: 'Proyectos', path: '/proyectos' },
+    { name: 'Contacto', path: '/contacto' }
+  ];
+
+  toggleMenu() {
+    this.isMenuOpen.update(v => !v);
   }
 }

@@ -1,16 +1,23 @@
-.animate-reveal {
-  opacity: 0;
-  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.3s;
+:host {
+  display: block;
 }
 
-@keyframes revealUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Máscara para que la imagen se fusione con el fondo negro abajo */
+.image-mask {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Asegurar que la imagen no sobrepase en pantallas grandes */
+img {
+  max-height: 70vh; // Nunca más alta que el 70% de la pantalla
+  user-select: none;
+  pointer-events: none; // El mouse interactúa con el contenedor, no la imagen
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding-top: 120px;
+    text-align: center;
   }
 }

@@ -4,7 +4,7 @@ import { ProjectGridComponent } from '../../components/project-grid/project-grid
 import { HeroComponent } from '../../components/hero/hero.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
 import { FooterComponent } from '../../layout/footer/footer.component';
-import { AboutComponent } from '../../components/about/about.component.spec';
+import { AboutComponent } from '../../components/about/about.component';
 
 @Component({
   selector: 'app-home',

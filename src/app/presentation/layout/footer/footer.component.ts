@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  email = 'tu-email@fullstack.com';
+  email = 'elia.chacmi@uab.edu.bo';
 
 }

@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+input, textarea {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  &:focus {
+    padding-left: 10px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  }
+}
+
+.group\/social {
+  &:hover {
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Soporte para el gradiente de texto del título */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(-5px) translateX(-50%); }
+}

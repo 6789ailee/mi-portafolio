@@ -11,19 +11,19 @@ export const routes: Routes = [
   },
   {
     path: 'contacto',
-    loadComponent: () => import('./presentation/pages/contact/contact.component').then(m => m.ContactComponent)
+    loadComponent: () => import('./presentation/pages/contact/contact.component').then(m => m.ContactPageComponent)
   },
   {
     path: 'sobre-mi', 
-    loadComponent: () => import('./presentation/components/about/about.component').then(m => m.AboutComponent)
+    loadComponent: () => import('./presentation/pages/about-page/about-page.component').then(m => m.AboutPageComponent)
   },
   {
-    path: 'proyecto/:id',
+    path: 'proyectos',
     loadComponent: () => import('./presentation/pages/project-detail/project-detail.component').then(m => m.ProjectDetailComponent)
   },
   {
-    path: 'contacto',
-    loadComponent: () => import('./presentation/pages/contact/contact.component').then(m => m.ContactComponent)
+    path: 'contacto-redes-sociales',
+    loadComponent: () => import('./presentation/pages/contact/contact.component').then(m => m.ContactPageComponent)
   },
   {
     path: '**',

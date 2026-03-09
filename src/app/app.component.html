@@ -1,16 +1,24 @@
-@if (isLoading()) {
-  <app-loading-screen (loadingFinished)="finishLoading()"></app-loading-screen>
-}
+<app-loading-screen 
+  *ngIf="isLoading()" 
+  (loadingFinished)="finishLoading()">
+</app-loading-screen>
 
-<div [class.opacity-0]="isLoading()" 
-     [class.opacity-100]="!isLoading()" 
-     class="transition-opacity duration-1000 ease-in-out bg-[#000000] min-h-screen flex flex-col">
-  
+<main [class.opacity-0]="isLoading()" class="transition-opacity duration-700">
   <app-navbar></app-navbar>
-
-  <main class="flex-grow">
-    <router-outlet></router-outlet>
-  </main>
-
+  
+  <router-outlet></router-outlet>
+  
   <app-footer></app-footer>
+</main>
+
+<div class="cursor-dot"
+     [style.left.px]="dotPos().x"
+     [style.top.px]="dotPos().y">
+</div>
+
+<div class="cursor-outline"
+     [class.is-hovering]="isHovering()"
+     [style.left.px]="outlinePos().x"
+     [style.top.px]="outlinePos().y">
+  <div class="scan-line"></div>
 </div>

@@ -14,7 +14,7 @@ export class ProjectGridComponent {
       title: 'E-Commerce SaaS',
       category: 'Full Stack',
       image: 'assets/images/project1.png',
-      size: 'large', // Ocupará 2 columnas
+      size: 'large',
       tags: ['Angular', 'NestJS', 'Stripe']
     },
     {
@@ -35,7 +35,7 @@ export class ProjectGridComponent {
       title: 'Social Media App',
       category: 'Mobile First',
       image: 'assets/images/project4.png',
-      size: 'medium', // Ocupará 2 columnas pero menos altura
+      size: 'medium', 
       tags: ['Firebase', 'Tailwind']
     }
   ];

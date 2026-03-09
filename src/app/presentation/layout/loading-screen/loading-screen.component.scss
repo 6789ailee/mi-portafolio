@@ -1,15 +1,18 @@
 :host {
-  &.loading-exit {
-    animation: splitOpen 1.2s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  display: block;
+}
+
+::ng-deep body {
+  cursor: none; 
+  
+  &:has(app-loading-screen) {
+    .cursor-dot, .cursor-outline, .particle-bit {
+      display: none !important;
+    }
+    overflow: hidden; 
   }
 }
 
-@keyframes splitOpen {
-  0% { 
-    clip-path: inset(0 0 0 0); 
-  }
-  100% { 
-    clip-path: inset(100% 0 0 0); 
-    opacity: 0;
-  }
+.animate-gradient-x {
+  background-size: 200% 100%;
 }

@@ -1,52 +1,56 @@
-<section class="relative min-h-screen bg-[#000000] overflow-hidden flex flex-col justify-center pt-20">
+<section class="relative min-h-screen bg-black overflow-hidden flex items-center pt-24 pb-12">
   
-  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full"></div>
-  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-fuchsia-600/10 blur-[130px] rounded-full"></div>
-  <div class="absolute inset-0 z-0 opacity-[0.15] pointer-events-none" 
-       style="background-image: url('data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 100 Q 250 50 500 100 T 1000 100\' stroke=\'%234f46e5\' fill=\'transparent\' stroke-width=\'0.5\'/%3E%3C/svg%3E');">
-  </div>
+  <div class="absolute top-0 right-0 w-[40vw] h-[40vw] bg-azul-chillon/10 blur-[120px] rounded-full animate-pulse-soft"></div>
+  <div class="absolute bottom-0 left-0 w-[30vw] h-[30vw] bg-rosa-chillon/10 blur-[120px] rounded-full animate-pulse-soft"></div>
 
-  <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-    
-    <div class="space-y-8 animate-reveal">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-fuchsia-500/30 bg-fuchsia-500/5 text-fuchsia-400 text-xs font-mono">
-        <span class="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse"></span>
-        OPEN TO WORK
-      </div>
+  <div class="container mx-auto px-6 h-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
+      
+      <div class="space-y-6 md:space-y-8 animate-reveal-up z-20 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-rosa-chillon text-[9px] md:text-[10px] font-black tracking-[0.3em] uppercase">
+          <span class="w-2 h-2 rounded-full bg-rosa-chillon animate-ping"></span>
+          SISTEMA_OPERATIVO_ACTIVO
+        </div>
 
-      <h1 class="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-white">
-        CREANDO EL <br>
-        <span class="bg-gradient-to-r from-[#A78BFA] via-[#F472B6] to-[#E879F9] bg-clip-text text-transparent">
-          FUTURO.
-        </span>
-      </h1>
+        <h1 class="text-5xl md:text-7xl lg:text-[90px] font-black leading-[0.85] tracking-tighter text-white uppercase italic">
+          INGENIERÍA <br>
+          <span class="bg-gradient-to-r from-rosa-chillon via-lila-chillon to-azul-chillon bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,0,127,0.3)]">
+            DE_DISEÑO.
+          </span>
+        </h1>
 
-      <p class="text-gray-400 text-xl max-w-md font-light">
-        Ingeniero Full Stack creando soluciones con <span class="text-white">Clean Architecture</span>.
-      </p>
+        <p class="text-white/50 text-base md:text-xl max-w-md mx-auto lg:mx-0 font-mono font-light leading-relaxed">
+          > Desarrollador Full Stack <br>
+          > <span class="text-azul-chillon">UI/UX Engineer</span> <br>
+          > Arquitecturas Escalables.
+        </p>
 
-      <div class="flex flex-wrap gap-4">
-        <div>
-          <a href="docs/CV.pdf" target="_blank" class="px-10 py-4 bg-white text-black rounded-2xl font-black hover:scale-105 transition-all inline-block">
-            VER MI CV
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+          <a href="docs/CV.pdf" target="_blank" 
+             class="clickable px-8 md:px-12 py-4 md:py-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl font-black text-[10px] tracking-[0.4em] uppercase text-white hover:border-rosa-chillon hover:shadow-glass-rosa transition-all duration-500">
+            DESCARGAR_CV.SYS
           </a>
         </div>
-        <button class="px-10 py-4 bg-white text-black rounded-2xl font-black hover:scale-105 transition-all">
-          PROYECTOS
-        </button>
-        <button class="px-10 py-4 border border-white/10 backdrop-blur-xl rounded-2xl font-bold text-white hover:bg-white/5">
-          CONTACTO
-        </button>
       </div>
-    </div>
 
-    <div class="relative group flex justify-center lg:justify-end">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#A78BFA]/20 blur-[100px] rounded-full group-hover:scale-125 transition-all duration-1000"></div>
-      <img src="images/foto.png" 
-           alt="Muhammad" 
-           class="relative z-10 w-full max-w-lg grayscale hover:grayscale-0 transition-all duration-700 drop-shadow-[0_0_30px_rgba(167,139,250,0.3)]">
+      <div class="relative flex justify-center items-center z-10 animate-fade-in-blur">
+        <div class="absolute w-[80%] aspect-square bg-lila-chillon/15 blur-[80px] rounded-full"></div>
+        
+        <div class="relative w-full max-w-[320px] md:max-w-[450px] lg:max-w-[500px]">
+          <div class="image-mask group relative">
+            <img src="images/foto.png" 
+                 alt="Elia" 
+                 class="w-full h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-1000 brightness-110 drop-shadow-[0_0_30px_rgba(0,212,255,0.2)]">
+            
+            <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-b from-transparent via-azul-chillon/40 to-transparent h-16 w-full animate-scan opacity-0 group-hover:opacity-100"></div>
+          </div>
+          
+          <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-lila-chillon px-4 py-2 md:px-6 md:py-4 rounded-2xl rotate-6 shadow-neon-glow hidden sm:block">
+            <span class="text-black font-black text-lg md:text-2xl italic tracking-tighter">ELIA_CH.</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  
 </section>

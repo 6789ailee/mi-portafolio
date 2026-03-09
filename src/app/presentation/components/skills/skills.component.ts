@@ -23,6 +23,7 @@ export class SkillsComponent {
   { name: 'Figma', icon: 'icons/figma.svg', color: '#F24E1E' },
   { name: 'NestJS', icon: 'icons/nestjs.svg', color: '#e0234e' },
   { name: 'Node.js', icon: 'icons/nodedotjs.svg', color: '#339933' },
-  { name: 'PostgreSQL', icon: 'icons/postgresql.svg', color: '#336791' }
+  { name: 'PostgreSQL', icon: 'icons/postgresql.svg', color: '#336791' },
+  { name: 'Git', icon: 'icons/git.svg', color: '#F05032' }
   ];
 }

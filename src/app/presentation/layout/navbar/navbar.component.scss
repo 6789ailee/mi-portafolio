@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.active-link {
+  color: #ff007f !important; // Rosa chillón
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #ff007f, #00d4ff);
+  }
+}
+
+nav {
+  will-change: transform, padding;
+  backface-visibility: hidden;
+}
